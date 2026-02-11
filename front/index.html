@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Page de test</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="card">
+    <h1>Index de test</h1>
+    <p>Une page minimaliste pour vérifier que le front fonctionne.</p>
+    <p><strong>Heure locale :</strong> <span id="time">—</span></p>
+    <p><button id="nowBtn">Mettre à jour l'heure</button></p>
+    <pre id="log"></pre>
+  </main>
+  <script>
+    const timeEl = document.getElementById('time');
+    const log = document.getElementById('log');
+    function updateTime(){ timeEl.textContent = new Date().toLocaleString(); }
+    document.getElementById('nowBtn').addEventListener('click', ()=>{
+      updateTime();
+      log.textContent = 'Bouton cliqué à ' + new Date().toLocaleString();
+    });
+    updateTime();
+  </script>
+</body>
+</html>
+		updateTime();
